@@ -1,0 +1,5 @@
+{% extends 'web/base.html' %}
+{% block content %}
+  <h1>this is login page</h1>
+  <a href="{% url 'social:begin' 'facebook'%}?next={{ request.path }}"> fb login</a>
+{% endblock %}

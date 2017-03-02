@@ -1,0 +1,28 @@
+{% extends "web/base.html" %}
+{% block content %}
+    <h1 >This is home page</h1>
+    {% if user and not user.is_anonymous %}
+      <h4>{{ user.get_full_name|default:user.username }}</h4>
+    {% endif %}
+    <a href="{% url 'auth:logout' %}?next=/">logout</a>
+    <hr />
+    <div>
+      <form action=" ", method="post">
+        {% csrf_token %}
+        <label for="{{ post_form.post.id_for_label }}">What's your friends are missing?</label>
+        {{ post_form.post_field }}
+        <button type="submit" name="action">Post</button>
+      </form>
+    </div>
+    <hr />
+    <div>
+      <h2>Posts by your friends</h2>
+      {% for post in posts %}
+        <div>
+          <p>
+            {{ post.post_text }}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+{% endblock %}
