@@ -95,4 +95,4 @@ ENV/
 Contact GitHub API Training Shop Blog About
 
 # App files
-.sqlite3
+db.sqlite3

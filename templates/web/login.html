@@ -1,5 +1,15 @@
 {% extends 'web/base.html' %}
+{% load static %}
+{% block title %}
+  login
+{% endblock %}
 {% block content %}
-  <h1>this is login page</h1>
-  <a href="{% url 'social:begin' 'facebook'%}?next={{ request.path }}"> fb login</a>
+  <div class="login-page">
+    <div class="signin-container">
+      <div class="signin">
+        <h1>Sign in to knovue to know about things that matter</h1>
+        <a class="btn-login--fb" href="{% url 'social:begin' 'facebook'%}?next={{ request.path }}">Continue with Facebook</a>
+      </div>
+    </div>
+  </div>
 {% endblock %}
