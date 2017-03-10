@@ -99,22 +99,38 @@ SOCIAL_AUTH_PIPELINE = [
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ['SOCIAL_AUTH_FACEBOOK_KEY']
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['SOCIAL_AUTH_FACEBOOK_SECRET']
+PROD_DB_USER = os.environ["PROD_DB_USER"]
+PROD_DB_PASSWORD = os.environ["PROD_DB_PASSWORD"]
+PROD_DB_HOST = os.environ["PROD_DB_HOST"]
+PROD_DB_PORT = os.environ["PROD_DB_PORT"]
+PROD_DB_NAME = os.environ["PROD_DB_NAME"]
 
 LOGIN_REDIRECT_URL = ' '
 LOGIN_URL = '/login'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'knovue',
-        'USER': 'Revanth',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
+if os.getenv('SETTINGS_MODE', '') == 'production':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': PROD_DB_NAME,
+            'USER': PROD_DB_USER,
+            'PASSWORD': PROD_DB_PASSWORD,
+            'HOST': PROD_DB_HOST,
+            'PORT': PROD_DB_PORT,
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'knovue',
+            'USER': 'Revanth',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 
 
 # Password validation

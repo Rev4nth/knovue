@@ -8,6 +8,7 @@ from taggit.managers import TaggableManager
 
 class Post(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=20, null=True)
     post_text =  models.TextField()
     created = models.DateTimeField(auto_now=True)
     tags = TaggableManager()
