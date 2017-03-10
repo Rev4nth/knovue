@@ -1,1 +1,1 @@
-web: gunicorn knovue.wsgi
+web: gunicorn knovue.wsgi --log-file -
