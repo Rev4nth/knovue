@@ -11,7 +11,7 @@ from .forms import PostForm
 
 def login(request):
     if request.user.is_authenticated():
-        return HttpResponseRedirect(reverse('web:home'))
+        return HttpResponseRedirect(reverse('web:post_list'))
     else:
         template_path = 'web/login.html'
         return render(request, template_path)

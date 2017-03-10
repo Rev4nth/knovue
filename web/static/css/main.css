@@ -120,3 +120,6 @@ body {
     margin-bottom: 16px;
     font-size: 40px;
   }
+  #id_post_tags {
+    display: none;
+  }
