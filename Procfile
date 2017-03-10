@@ -1,0 +1,1 @@
+web: gunicorn knovue.wsgi
