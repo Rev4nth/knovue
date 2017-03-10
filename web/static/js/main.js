@@ -10,4 +10,20 @@ $( document ).ready(function() {
    stopPropagation: false
    }
   );
+  $('.tags').material_chip();
+  $('.tags-placeholder').material_chip({
+    secondaryPlaceholder: 'Add a Tag',
+  });
+  
+  $('.tags').on('chip.add', function(e, chip){
+    $('#id_post_tags').val(function(){
+      return this.value + ', ' + chip.tag;
+    });
+  });
+  $('.chips').on('chip.delete', function(e, chip){
+    $('#id_post_tags').val(function(){
+      return (this.value).replace(chip.tag,'');
+    });
+  });
+
 });
