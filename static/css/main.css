@@ -36,8 +36,12 @@ body {
   padding: 12px 24px;
   border-radius: 2px;
   box-sizing: border-box;
+  vertical-align: bottom;
 }
-
+.signin .btn-login--fb img {
+  height: 24px;
+  margin-right: 8px;
+}
 /**************homepage*********************/
 
   /*header*/
@@ -82,7 +86,9 @@ body {
     bottom: -10px;
     cursor: pointer;
     color: white;
-
+  }
+  .dropdown-content li>a {
+    color: #212121;
   }
   /*main*/
   .container {
@@ -104,6 +110,8 @@ body {
     float: right;
     font-size: 12px;
     color: #757575;
+    margin-right: 8px;
+    margin-top: 3px;
   }
   .heading-content {
     padding-top:12px;
@@ -123,3 +131,29 @@ body {
   #id_post_tags {
     display: none;
   }
+/*profile*/
+
+.profile-page {
+  text-align: center;
+  margin: 40px 0;
+}
+.profile-page h2 , .profile-page img{
+  display: inline-block;
+}
+.profile-page h2 {
+  line-height: 120px;
+  margin: 0;
+  font-weight: 300;
+  margin-right: 30px;
+}
+.profile-page img {
+  border-radius: 50%;
+  vertical-align: bottom;
+}
+.post_delete a {
+  cursor: pointer;
+}
+.post_delete a .material-icons{
+  color: #9b9b9b;
+}
+.drop-down

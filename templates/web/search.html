@@ -25,45 +25,8 @@
   </ul>
 </nav>
 <div class="container">
-  {% if not tag %}
-    <div class="card">
-      <form action=" ", method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="row">
-          <div class="input-field col s12">
-            {{ post_form.post_title }}
-            <label for="id_post_title">It's about.. </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            {{ post_form.post_field }}
-            <label for="id_post_field">More about it</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            {{ post_form.post_tags }}
-            <div class="tags tags-placeholder">
-
-            </div>
-          </div>
-        </div>
-        <span>{{ post_form.post_image }}</span>
-        <div class="card__action">
-          <button class="waves-effect waves-light btn offset-s8" type="submit" name="action">Post</button>
-        </div>
-      </form>
-    </div>
-  {% endif %}
   <div class="posts-list">
-    {% if tag %}
-      <div class="heading-content">
-        <div class="heading-prefix">Tagged in</div>
-        <h1 class="heading-title">{{ tag.name }}</h1>
-      </div>
-    {% endif %}
-    {% for post in posts %}
+    {% for post in search_posts %}
       <div class="card">
           <span class="post_date">{{post.created |date:"M d"}}</span>
           <div>

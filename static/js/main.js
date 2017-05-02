@@ -4,7 +4,7 @@ $( document ).ready(function() {
    outDuration: 225,
    constrainWidth: false,
    hover: false,
-   gutter: 20,
+   gutter: 10,
    belowOrigin: true,
    alignment: 'right',
    stopPropagation: false
@@ -14,7 +14,7 @@ $( document ).ready(function() {
   $('.tags-placeholder').material_chip({
     secondaryPlaceholder: 'Add a Tag',
   });
-  
+
   $('.tags').on('chip.add', function(e, chip){
     $('#id_post_tags').val(function(){
       return this.value + ', ' + chip.tag;
@@ -25,5 +25,15 @@ $( document ).ready(function() {
       return (this.value).replace(chip.tag,'');
     });
   });
-
+  $('.post_delete').dropdown({
+   inDuration: 300,
+   outDuration: 225,
+   constrainWidth: false,
+   hover: false,
+   gutter: 20,
+   belowOrigin: true,
+   alignment: 'right',
+   stopPropagation: false
+   }
+  );
 });

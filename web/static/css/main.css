@@ -13,6 +13,10 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
+.fb_logo{
+  height: 24px;
+  margin-right: 6px;
+}
 .signin {
   display: block;
   margin-left: auto;
@@ -28,6 +32,7 @@ body {
   color: #757575;
 }
 .signin .btn-login--fb {
+  vertical-align: bottom;
   text-decoration: none;
   height: 58px;
   background-color: #3b5998;
