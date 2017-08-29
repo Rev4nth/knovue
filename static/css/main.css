@@ -54,6 +54,9 @@ body {
   nav ul {
     margin-right: 30px;
   }
+  nav form {
+    display: inline;
+  }
 
   .search-wrapper.card {
     display: inline-block;
@@ -131,6 +134,22 @@ body {
   #id_post_tags {
     display: none;
   }
+  .post_title {
+    font-size: 1.9rem;
+  }
+  .post_text {
+    font-size: 1rem;
+  }
+  .post_image {
+    height: 240px;
+  }
+  .like_button i {
+    color: #9b9b9b;
+  }
+  .liked  i{
+    color: #26a69a;
+  }
+
 /*profile*/
 
 .profile-page {
@@ -156,4 +175,3 @@ body {
 .post_delete a .material-icons{
   color: #9b9b9b;
 }
-.drop-down
